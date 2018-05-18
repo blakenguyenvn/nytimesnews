@@ -50,7 +50,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<a href="{{web_url}}" target="_blank" type="button" class="btn btn-primary"><i class="fa fa-arrow-circle-right"></i> Read Detail</a>
+							<a href="{{web_url}}" target="_blank" class="btn btn-primary"><i class="fa fa-arrow-circle-right"></i> Read Detail</a>
 						</div>
 					</div>
 				</div>
