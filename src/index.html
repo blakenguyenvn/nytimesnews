@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html ng-app="NyTimesMainApp">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Home - NYTimes News</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Visit NYTimes News for up-to-the-minute news, breaking news, video, audio and feature stories. BBC News provides trusted World and UK news as well as local and regional perspectives. Also entertainment, business, science, technology and health news." />
+	<meta name="keywords" content="Visit NYTimes News, breaking news" />
+	<meta name="author" content="http://simflexcode.com/blakenguyen" />
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  <!-- Animate.css -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="assets/css/icomoon.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="assets/css/flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+  
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- AngularJS  -->
+  <script src="assets/js/angular.min.js"></script>
+
+	<!-- AngularJS APP-->
+	<script src="app/app.js"></script>
+	<script src="app/components/nyTimesNewsFlux/nyTimesNewsFlux.js"></script>
+	<script src="app/components/nyTimesDirectives/nyTimesNewsRender.js"></script>
+	<script src="app/controllers/nyTimesNewsCtrl.js"></script>
+	
+  <!-- Modernizr JS -->
+	<script src="assets/js/modernizr-2.6.2.min.js"></script>
+	<script src="assets/js/moment.js"></script>
+
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body ng-controller="NyTimesNewsCtrl">
+
+	<div id="page">
+		<nav class="nytimes-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm text-center">
+							<div id="nytimes-logo"><a href="http://simflexcode.com/nytimes">NYTimes</a></div>
+            </div>
+          </div>
+          <div class="row">
+						<div class="col-sm text-center">
+							<ul>
+								<li class="active"><a href="http://simflexcode.com/nytimes">Home</a></li>
+								<li class="">
+									<a target="_blank" href="http://relaxitblog.com/">Blog</a>
+								</li>
+								<li><a target="_blank" href="http://simflexcode.com/blakenguyen">Event</a></li>
+								<li><a target="_blank" href="http://simflexcode.com/blakenguyen">Travel</a></li>
+								<li><a target="_blank" href="http://simflexcode.com/blakenguyen">About Me</a></li>
+								<li><a target="_blank" href="http://simflexcode.com/blakenguyen">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+    <!-- Begin: Header and Slider -->
+    <aside id="nytimes-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(assets/images/macolmlee.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-pull-3 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+				   				<div class="slider-text-inner">
+				   					<div class="desc">
+				   						<p class="meta">
+												<span class="cat"><a href="#">Passion</a></span>
+												<span class="date">16 May 2018</span>
+												<span class="pos">By <a href="#">Blake</a></span>
+											</p>
+											 <h1>MALCOLM LEE: A Michelin-starred chef who serves up a taste of his passion.</h1>
+											 <p><a class="readmore-link" href="http://www.visitsingapore.com/dining-drinks-singapore/malcolm-lee/" target="_blank"><i class="fa fa-arrow-circle-right"></i> Read more</a></p>
+				   					</div>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(assets/images/markong.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-pull-3 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+				   				<div class="slider-text-inner">
+				   					<div class="desc">
+				   						<p class="meta">
+												<span class="cat"><a href="#">Passion</a></span>
+												<span class="date">16 May 2018</span>
+												<span class="pos">By <a href="#">Blake</a></span>
+											</p>
+											 <h1>MARK ONG: The sneaker artist shares his punk-inspired passion.</h1>
+											 <p><a class="readmore-link" href="http://www.visitsingapore.com/singapore-shopping/mark-ong/" target="_blank"><i class="fa fa-arrow-circle-right"></i> Read more</a></p>
+				   					</div>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+		<!-- Close: Header and Slider -->
+
+		<!-- Begin: List of News Page-->
+		<div id="nytimes-container">  
+			<div class="container" ng-repeat="news_page in news_store.data track by $index">
+				<div class="row row-pb-md">
+          <div ng-repeat="news_item in news_page track by $index" ng-class="{'col-md-4': $index == 0 || $index == 1 || $index == 2 || $index == 4 || $index == 5 || $index == 6 || $index == 7 || $index == 8, 'col-md-8': $index == 3 || $index == 9 }">
+						<div news-item-render="{{news_item}}"></div>
+					</div>
+				</div>
+      </div>
+      <!-- Close: List of News Page-->
+
+      <!-- Begin: Loadmore button-->
+      <div class="container">
+        <div class="row row-pb-sm">
+          <div class="col-sm text-center loader-wrapper">
+              <div class="loader ng-hide" ng-show="news_store.isLoading">
+                <div class="loader-inner ball-beat">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row row-pb-md justify-content-center">
+          <div class="col-sm-8 col-md-6 text-center">
+            <button ng-show="!news_store.isLoading" ng-class="{'force-disabled': news_store.isLoading}" ng-click="loadMoreNews();" type="button" class="ng-hide btn btn-primary btn-lg btn-block text-uppercase">Load more news</button>
+          </div>
+        </div>
+      </div>
+      <!-- Close: Loadmore button-->
+		</div>
+
+		<footer id="nytimes-footer" role="contentinfo">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text-center">
+							<small class="block">Copyright &copy; 2018. All rights reserved by NYTimes</small> 
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+  </div>
+  <!-- UI Jquery Script -->
+  <script src="assets/js/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- Waypoints -->
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <!-- Flexslider -->
+  <script src="assets/js/jquery.flexslider-min.js"></script>
+  <!-- Owl carousel -->
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <!-- Magnific Popup -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/magnific-popup-options.js"></script>
+  <!-- Main -->
+  <script src="assets/js/main.js"></script>
+	</body>
+</html>
+
